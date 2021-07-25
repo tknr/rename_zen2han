@@ -1,0 +1,6 @@
+#!/bin/bash
+IFS=$'\n'
+for file in `ls -1 --color=none`
+do
+	rename_zen2han ${file}
+done
