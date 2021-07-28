@@ -2,5 +2,6 @@
 IFS=$'\n'
 
 src=${1}
-dst=`echo "${1}" | sed 'y/ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ０１２３４５６７８９/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/' | sed -e 's/　/ /g' | sed -e 's/  */ /g'`
+dst=`echo "${1}" | sed 'y/ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ０１２３４５６７８９/abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/'`
+dst=`echo "${dst}" | sed 'y/（）/()/' | sed -e 's/　/ /g' | sed -e 's/  */ /g'`
 mv -v "${src}" "${dst}"
